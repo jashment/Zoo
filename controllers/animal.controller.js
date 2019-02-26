@@ -33,7 +33,7 @@ exports.animal_create = (req, res) => {
     })
 };
 
-exports.animal_details = function (req, res) {
+exports.animal_details = (req, res) => {
     Animal.findById(req.params.id, function (err, animal) {
         if (err) return next(err)
         res.send(animal)

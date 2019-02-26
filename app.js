@@ -21,8 +21,9 @@ app.set('views', 'views')
 
 app.use('/animals', animal)
 
-let port = 5000
 
-app.listen(port, ()=> {
+const port =(process.env.PORT || 5000)
+
+app.listen(port, () => {
     console.log(`Server is up and running on ${port}`)
 })

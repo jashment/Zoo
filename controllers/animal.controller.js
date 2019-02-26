@@ -2,8 +2,8 @@ const Animal = require('../models/animal.model');
 
 
 exports.test = function (req, res) {
-    res.send('Greetings from the Test controller!')
-};
+    res.send('Greetings from the Test Controller!')
+}
 
 exports.animals_all = (req, res, next) => {
     Animal.find({})

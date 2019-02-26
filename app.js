@@ -20,7 +20,7 @@ app.set('view engine', 'ejs')
 app.set('views', 'views')
 
 app.use('/animals', animal)
-
+app.use('/', animal)
 
 const port =(process.env.PORT || 5000)
 

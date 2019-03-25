@@ -16,7 +16,7 @@ exports.animals_all = (req, res, next) => {
     .catch(err => console.log(err))
 }
 
-exports.animal_create = (req, res) => {
+exports.animal_create = (req, res, next) => {
     let animal = new Animal(
         {
             name: req.body.name,
@@ -33,21 +33,21 @@ exports.animal_create = (req, res) => {
     })
 };
 
-exports.animal_details = (req, res) => {
+exports.animal_details = (req, res, next) => {
     Animal.findById(req.params.id, function (err, animal) {
         if (err) return next(err)
         res.send(animal)
     })
 }
 
-exports.animal_update = function (req, res) {
+exports.animal_update = function (req, res, next) {
     Animal.findByIdAndUpdate(req.params.id, {$set: req.body}, function (err, animal) {
         if (err) return next(err)
         res.send('Animal udpated.')
     })
 }
 
-exports.animal_delete = function (req, res) {
+exports.animal_delete = function (req, res, next) {
     Animal.findByIdAndRemove(req.params.id, function (err) {
         if (err) return next(err);
         res.send('Deleted successfully')

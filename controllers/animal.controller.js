@@ -22,7 +22,9 @@ exports.animal_create = (req, res, next) => {
         {
             name: req.body.name,
             description: req.body.description,
-            url: req.body.url
+            url: req.body.url,
+            emotion: req.body.emotion,
+            genus: req.body.genus
         }
     );
 

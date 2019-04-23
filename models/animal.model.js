@@ -4,7 +4,9 @@ const Schema = mongoose.Schema
 let AnimalSchema = new Schema({
     name: {type: String, required: true, max: 100},
     description: {type: String, required: true},
-    url: {type: String, required: false}
+    url: {type: String, required: false},
+    emotion: {type: String, required: true},
+    genus: {type: String, required: true}
 })
 
 

@@ -9,9 +9,10 @@ exports.animals_all = (req, res, next) => {
     Animal.find({})
     .then(allAnimals => {
         console.log(allAnimals)
-        res.render('all-animals', {
-            animals: allAnimals
-        })
+        res.send(allAnimals)
+        // res.render('all-animals', {
+        //     animals: allAnimals
+        // })
     })
     .catch(err => console.log(err))
 }

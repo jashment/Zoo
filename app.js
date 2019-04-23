@@ -16,8 +16,8 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 
-app.set('view engine', 'ejs')
-app.set('views', 'views')
+// app.set('view engine', 'ejs')
+// app.set('views', 'views')
 
 app.use('/animals', animal)
 app.use('/', animal)

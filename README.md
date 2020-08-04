@@ -1,5 +1,7 @@
 # Zoo
 
+https://obscure-plateau-74859.herokuapp.com/ to view full app
+
 npm install
 
 Routes

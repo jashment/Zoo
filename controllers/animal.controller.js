@@ -1,5 +1,18 @@
 const Animal = require('../models/animal.model');
 
+require('dotenv').config();
+
+const { createClient } = require('@supabase/supabase-js')
+
+// Create a single supabase client for interacting with your database 
+const supabase = createClient(process.env.SUPABASE_URI, process.env.PUBLIC_ANON_KEY)
+
+
+const { data, error } = await supabase
+  .from('cities')
+  .insert([
+    { name: 'The Shire', country_id: 554 }
+  ])
 
 const test = (req, res) => {
     res.send('Greetings from the Test Controller!')
